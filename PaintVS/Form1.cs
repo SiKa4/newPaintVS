@@ -1,4 +1,4 @@
-//Задание выполнил : Фролов Арсений Вадимович. Группа 221П.Практическая работа "Геометрические фигуры - 4". 04.06.2022.
+//Задание выполнил : Frolov Arsenui Vadimofich. Group 221p.Практическая работа "Геометрические фигуры - 4". 04.06.2022.
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace PaintVS
