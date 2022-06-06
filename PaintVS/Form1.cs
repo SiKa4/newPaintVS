@@ -70,10 +70,15 @@ namespace PaintVS
                     figures = new Figures();
                     bmp = new Bitmap(PicBox.ClientSize.Width, PicBox.ClientSize.Height);
                     PicBox.Image = null;
-                    clearOK = true;
                 }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 PicBox.Visible = true;
             }
+            clearOK = true;
         }
 
         private void PicBox_Paint(object sender, PaintEventArgs e)
