@@ -73,6 +73,7 @@ namespace PaintVS
                 }
                 else if (dialogResult == DialogResult.No)
                 {
+                    PicBox.Visible = true;
                     return;
                 }
 
