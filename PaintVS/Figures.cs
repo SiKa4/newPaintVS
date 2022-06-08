@@ -10,15 +10,29 @@ using System.Xml.Serialization;
 class Figures
 {
     private List<Figure> lst;
+    private List<Figure> lstDelElements;
 
     public Figures()
     {
         lst = new List<Figure>();
+        lstDelElements = new List<Figure>();
     }
 
     public void Add(Figure figure)
     {
         lst.Add(figure);
+    }
+
+    public void PopBack()
+    {
+        lstDelElements.Add(lst.ElementAt(lst.Count - 1));
+        lst.RemoveAt(lst.Count - 1);
+    }
+
+    public void PushBack()
+    {
+        lst.Add(lstDelElements.ElementAt(lstDelElements.Count - 1));
+        lstDelElements.RemoveAt(lstDelElements.Count - 1);
     }
 
     public void Save(string path)
@@ -103,8 +117,13 @@ class Figures
         return nums;
     }
 
-    public int getCount()
+    public int lstGetCount()
     {
         return lst.Count;
+    }
+
+    public int lstDelElemGetCount()
+    {
+        return lstDelElements.Count;
     }
 }

@@ -34,15 +34,20 @@ namespace PaintVS
         {
             if (PicBox.ClientSize.Width > bmp.Width || PicBox.ClientSize.Height > bmp.Height)
             {
-                bmp = new Bitmap(PicBox.ClientSize.Width, PicBox.ClientSize.Height);
-
-                using (Graphics g = Graphics.FromImage(bmp))
-                {
-                    figures.DrawFigures(g);
-                }
-
-                PicBox.Image = bmp;
+                RedrawingFigures();
             }
+        }
+
+        private void RedrawingFigures()
+        {
+            bmp = new Bitmap(PicBox.ClientSize.Width, PicBox.ClientSize.Height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                figures.DrawFigures(g);
+            }
+
+            PicBox.Image = bmp;
         }
 
         private void DrawingShapes(Figure figure)
@@ -59,7 +64,7 @@ namespace PaintVS
 
         private void Bin_Click(object sender, EventArgs e)
         {
-            if (figures.getCount() != 0)
+            if (figures.lstGetCount() != 0)
             {
                 PicBox.Visible = false;
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear all the information without saving it?",
@@ -228,6 +233,24 @@ namespace PaintVS
             PicBox.Visible = true;
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (figures.lstGetCount() != 0)
+            {
+                figures.PopBack();
+                RedrawingFigures();
+            }
+        }
+
+        private void btnForward_Click(object sender, EventArgs e)
+        {
+            if (figures.lstDelElemGetCount() != 0)
+            {
+                figures.PushBack();
+                RedrawingFigures();
+            }
+        }
+
         private void sizeBar_Scroll(object sender, EventArgs e)
         {
             pen.Width = sizeBar.Value;
@@ -236,10 +259,10 @@ namespace PaintVS
         private void Save_Click(object sender, EventArgs e)
         {
             saveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-
+            PicBox.Visible = false;
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                if (figures.getCount() != 0)
+                if (figures.lstGetCount() != 0)
                 {
                     figures.Save(saveFile.FileName);
                 }
@@ -248,6 +271,7 @@ namespace PaintVS
                     MessageBox.Show("The file was not saved because there is no information about the figures.", "Error");
                 }
             }
+            PicBox.Visible = true;
         }
 
         private void Load_Click(object sender, EventArgs e)

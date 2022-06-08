@@ -40,19 +40,21 @@
             this.picBoxColor = new System.Windows.Forms.PictureBox();
             this.sizeBar = new System.Windows.Forms.TrackBar();
             this.Bin = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelFigure = new System.Windows.Forms.Panel();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.TriangleBtn = new System.Windows.Forms.Button();
             this.RectangleBtn = new System.Windows.Forms.Button();
             this.CircleBtn = new System.Windows.Forms.Button();
             this.LineBtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAdditional = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sizeBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bin)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelFigure.SuspendLayout();
+            this.panelAdditional.SuspendLayout();
             this.SuspendLayout();
             // 
             // PicBox
@@ -161,19 +163,57 @@
             this.Bin.TabStop = false;
             this.Bin.Click += new System.EventHandler(this.Bin_Click);
             // 
-            // panel1
+            // panelFigure
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelFigure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.TriangleBtn);
-            this.panel1.Controls.Add(this.RectangleBtn);
-            this.panel1.Controls.Add(this.CircleBtn);
-            this.panel1.Controls.Add(this.LineBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(273, 62);
-            this.panel1.TabIndex = 29;
+            this.panelFigure.BackColor = System.Drawing.Color.Transparent;
+            this.panelFigure.Controls.Add(this.btnForward);
+            this.panelFigure.Controls.Add(this.btnBack);
+            this.panelFigure.Controls.Add(this.TriangleBtn);
+            this.panelFigure.Controls.Add(this.RectangleBtn);
+            this.panelFigure.Controls.Add(this.CircleBtn);
+            this.panelFigure.Controls.Add(this.LineBtn);
+            this.panelFigure.Location = new System.Drawing.Point(0, 27);
+            this.panelFigure.Name = "panelFigure";
+            this.panelFigure.Size = new System.Drawing.Size(432, 62);
+            this.panelFigure.TabIndex = 29;
+            // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.Transparent;
+            this.btnForward.BackgroundImage = global::PaintVS.Properties.Resources.Forward2;
+            this.btnForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnForward.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnForward.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnForward.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForward.Font = new System.Drawing.Font("Adobe Arabic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnForward.Image = global::PaintVS.Properties.Resources.Circle;
+            this.btnForward.Location = new System.Drawing.Point(64, 29);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(33, 33);
+            this.btnForward.TabIndex = 38;
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::PaintVS.Properties.Resources.Back;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Adobe Arabic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBack.Image = global::PaintVS.Properties.Resources.Circle;
+            this.btnBack.Location = new System.Drawing.Point(24, 29);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(34, 33);
+            this.btnBack.TabIndex = 36;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // TriangleBtn
             // 
@@ -186,7 +226,7 @@
             this.TriangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TriangleBtn.Font = new System.Drawing.Font("Adobe Arabic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TriangleBtn.Image = global::PaintVS.Properties.Resources.Circle;
-            this.TriangleBtn.Location = new System.Drawing.Point(212, 3);
+            this.TriangleBtn.Location = new System.Drawing.Point(334, 3);
             this.TriangleBtn.Name = "TriangleBtn";
             this.TriangleBtn.Size = new System.Drawing.Size(54, 56);
             this.TriangleBtn.TabIndex = 37;
@@ -204,7 +244,7 @@
             this.RectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RectangleBtn.Font = new System.Drawing.Font("Adobe Arabic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RectangleBtn.Image = global::PaintVS.Properties.Resources.Circle;
-            this.RectangleBtn.Location = new System.Drawing.Point(143, 3);
+            this.RectangleBtn.Location = new System.Drawing.Point(265, 3);
             this.RectangleBtn.Name = "RectangleBtn";
             this.RectangleBtn.Size = new System.Drawing.Size(54, 56);
             this.RectangleBtn.TabIndex = 36;
@@ -222,7 +262,7 @@
             this.CircleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CircleBtn.Font = new System.Drawing.Font("Adobe Arabic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CircleBtn.Image = global::PaintVS.Properties.Resources.Circle;
-            this.CircleBtn.Location = new System.Drawing.Point(74, 3);
+            this.CircleBtn.Location = new System.Drawing.Point(196, 3);
             this.CircleBtn.Name = "CircleBtn";
             this.CircleBtn.Size = new System.Drawing.Size(54, 56);
             this.CircleBtn.TabIndex = 35;
@@ -239,22 +279,22 @@
             this.LineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LineBtn.Font = new System.Drawing.Font("Adobe Arabic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LineBtn.Image = global::PaintVS.Properties.Resources.Circle;
-            this.LineBtn.Location = new System.Drawing.Point(3, 3);
+            this.LineBtn.Location = new System.Drawing.Point(127, 3);
             this.LineBtn.Name = "LineBtn";
             this.LineBtn.Size = new System.Drawing.Size(54, 56);
             this.LineBtn.TabIndex = 34;
             this.LineBtn.UseVisualStyleBackColor = false;
             this.LineBtn.Click += new System.EventHandler(this.LineBtn_Click);
             // 
-            // panel2
+            // panelAdditional
             // 
-            this.panel2.Controls.Add(this.picBoxColor);
-            this.panel2.Controls.Add(this.sizeBar);
-            this.panel2.Controls.Add(this.Bin);
-            this.panel2.Location = new System.Drawing.Point(851, 27);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(406, 62);
-            this.panel2.TabIndex = 30;
+            this.panelAdditional.Controls.Add(this.picBoxColor);
+            this.panelAdditional.Controls.Add(this.sizeBar);
+            this.panelAdditional.Controls.Add(this.Bin);
+            this.panelAdditional.Location = new System.Drawing.Point(851, 27);
+            this.panelAdditional.Name = "panelAdditional";
+            this.panelAdditional.Size = new System.Drawing.Size(406, 62);
+            this.panelAdditional.TabIndex = 30;
             // 
             // FormPaint
             // 
@@ -262,8 +302,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1269, 822);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelAdditional);
+            this.Controls.Add(this.panelFigure);
             this.Controls.Add(this.PicBox);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Adobe Arabic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -280,9 +320,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sizeBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bin)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelFigure.ResumeLayout(false);
+            this.panelAdditional.ResumeLayout(false);
+            this.panelAdditional.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,11 +341,13 @@
         private PictureBox picBoxColor;
         private TrackBar sizeBar;
         private PictureBox Bin;
-        private Panel panel1;
+        private Panel panelFigure;
         private Button LineBtn;
         private Button CircleBtn;
         private Button TriangleBtn;
         private Button RectangleBtn;
-        private Panel panel2;
+        private Panel panelAdditional;
+        private Button btnForward;
+        private Button btnBack;
     }
 }
